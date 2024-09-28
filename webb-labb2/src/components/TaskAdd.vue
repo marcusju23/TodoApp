@@ -5,7 +5,7 @@
       <h4>Title</h4>
       <input type="text" id="title" v-model="title" placeholder="Enter title..." />
       <h4>Description (optional)</h4>
-      <input type="text" id="description" v-model="description" placeholder="Enter description..." />
+      <textarea type="text" id="description" v-model="description" placeholder="Enter description..." />
     </div>
     <button class="btn">Add task</button>
   </form>
