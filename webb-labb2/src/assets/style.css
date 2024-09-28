@@ -20,12 +20,9 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
     margin: 30px auto;
 }
 
@@ -103,7 +100,13 @@ input[type='text'] {
 
 @media (max-width: 600px) {
     .container {
-        width: 50%;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    textarea {
+        max-width: 100%;
+        min-width: 100%;
     }
 }
 
@@ -172,7 +175,7 @@ input[type='text'] {
 
 textarea {
     width: 100%;
-    max-width: 500px;
+    min-width: 100%;
     min-height: 100px;
     padding: 12px 15px;
     font-family: 'Lato', sans-serif;
@@ -181,7 +184,7 @@ textarea {
     color: #333;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
-    border-radius: 1px;
+    border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     resize: none;
     overflow: hidden;
