@@ -169,3 +169,21 @@ input[type='text'] {
 .task-list li:hover .inspect-btn {
     opacity: 1;
 }
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+    min-height: 100px;
+    padding: 12px 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    resize: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
