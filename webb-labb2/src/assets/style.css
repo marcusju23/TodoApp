@@ -29,6 +29,12 @@ body {
     margin: 30px auto;
 }
 
+h2 {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bbb;
+}
+
 h3 {
     border-bottom: 1px solid #bbb;
     padding-bottom: 10px;
@@ -37,6 +43,7 @@ h3 {
 
 h4 {
     margin: 0;
+    padding-top: 15px;
 }
 
 .task-list {
@@ -129,7 +136,7 @@ input[type='text'] {
 
 @media (max-width: 600px) {
     .container {
-        width: 90%;
+        width: 50%;
     }
 }
 
