@@ -1,28 +1,32 @@
 <template>
-  <h3>Tasks</h3>
-  <ul id="task-list" class="task-list">
-    <li v-for="(task, index) in tasks" v-bind:key="task.id">
-      <div
-          class="task-content"
-          @click="task.description ? toggleDescription(index) : null"
-          :class="{ 'no-description': !task.description }"
-      >
-        <span class="task-title">
-          <span v-if="task.description" class="description-indicator">🔍</span>
-          {{ task.title }}
-        </span>
-        <span class="task-description" v-show="task.showDescription">{{ task.description }}</span>
-      </div>
-      <button class="delete-btn" @click="deleteTask(task.id)">X</button>
-    </li>
-  </ul>
+  <div>
+    <h3>Tasks</h3>
+
+    <ul id="task-list" class="task-list">
+      <li v-for="task in tasks" :key="task.id">
+        <div class="task-content">
+          <span class="task-title">{{ capitalizeTitle(task.title) }}</span>
+          <span
+              class="task-description"
+              :class="{ expanded: expandedTasks[task.id] }"
+          >
+            {{ task.description }}
+          </span>
+        </div>
+
+        <div class="task-actions">
+          <button class="delete-btn" @click="deleteTask(task.id)">X</button>
+          <button v-if="task.description" class="inspect-btn" @click="toggleExpand(task.id)">🔍</button>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script setup>
-import {defineProps} from 'vue';
+import { ref, defineProps } from 'vue';
 
 const emit = defineEmits(["taskDeleted"]);
-
 const props = defineProps({
   tasks: {
     type: Array,
@@ -30,16 +34,18 @@ const props = defineProps({
   },
 });
 
-props.tasks.forEach(task => {
-  task.showDescription = false;
-});
+const expandedTasks = ref({});
 
-const toggleDescription = (index) => {
-  props.tasks[index].showDescription = !props.tasks[index].showDescription;
+const toggleExpand = (taskId) => {
+  expandedTasks.value[taskId] = !expandedTasks.value[taskId];
+};
+
+const capitalizeTitle = (title) => {
+  if (!title) return '';
+  return title.charAt(0).toUpperCase() + title.slice(1);
 };
 
 const deleteTask = (id) => {
   emit("taskDeleted", id);
 };
 </script>
-
