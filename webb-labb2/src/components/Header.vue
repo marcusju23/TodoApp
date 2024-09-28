@@ -1,3 +1,3 @@
 <template>
-  <h2>My Todo List</h2>
+  <h2>My Todo App</h2>
 </template>
