@@ -4,8 +4,8 @@
     <div class="form-control">
       <h4>Title</h4>
       <input type="text" id="title" v-model="title" placeholder="Enter title..." />
-      <h4>Description (optional)</h4>
-      <textarea type="text" id="description" v-model="description" placeholder="Enter description..." />
+      <h4>Description</h4>
+      <textarea type="text" id="description" v-model="description" placeholder="Enter description (optional)..." />
     </div>
     <button class="btn">Add task</button>
   </form>
