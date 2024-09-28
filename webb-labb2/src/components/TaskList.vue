@@ -6,12 +6,8 @@
       <li v-for="task in tasks" :key="task.id">
         <div class="task-content">
           <span class="task-title">{{ capitalizeTitle(task.title) }}</span>
-          <span
-              class="task-description"
-              :class="{ expanded: expandedTasks[task.id] }"
-          >
-            {{ task.description }}
-          </span>
+          <span class="task-description" :class="{ expanded: expandedTasks[task.id] }">
+            {{ task.description }}</span>
         </div>
 
         <div class="task-actions">
